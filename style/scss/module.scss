@@ -1,0 +1,238 @@
+#logo{
+    margin-bottom: 50px;
+}
+.labelTxt{
+    font-size: $fontSize;
+    font-weight: bold;
+    &.child{
+        margin-top: $margin;
+    }
+}
+
+.input, .select{
+    height: $inputHeight;
+    @include border(none);
+    border-bottom: 1px solid $black;
+    background-color: transparent;
+    padding: 3px;
+    font-size: $fontSize;
+    &:focus{
+        outline: $outline;
+    }
+}
+
+input[type ="submit"], .add{
+    @include border(none);
+    background-color: $black;
+    height: $inputHeight;
+    cursor: url(../../asset/img/icon/peace.png), auto;
+    color: $white;
+    font-size: $fontSizeBig;
+    margin-top: $margin;
+    text-align: center;
+    line-height: $inputHeight;
+    &:hover{
+        background-color: $beige;
+    }
+}
+.selectSide{
+    @include flex(row);
+    width: 100%;
+    justify-content: space-between;
+    div{
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+    }
+}
+.select{
+    @include border(1px solid $black);
+}
+.alertError{
+    height: $inputHeight;
+    background-color: $error;
+    margin-bottom: 20px;
+    text-align: center;
+    color: $white;
+    line-height: $inputHeight;
+}
+
+.alertOk{
+    height: $inputHeight;
+    background-color: $ok;
+    margin-bottom: 20px;
+    text-align: center;
+    color: $white;
+    line-height: $inputHeight;
+}
+
+
+#tabRead{
+    max-width: $maxWidthTab;
+    margin: auto;
+    font-size: $fontSizeTiny;
+    height: 110px;
+    tr td{
+        border-bottom: 1px solid $lightGrey;
+    }
+    #imgHead{
+        border-bottom: 1px solid $lightGrey;
+        img{
+            margin: $margin 0;
+        }
+    }
+    .blockInfo{
+        @include flex(row);
+        justify-content: space-between;
+        height: 90px;
+        margin: $margin 0;
+        .infoImg{
+            margin-right: $margin;
+            @include borderRadius(50%);
+            height: 90px;
+            width: 90px;
+            @include overflow(hidden);
+            img{
+                width: auto;
+                height: 100%;
+                display: inline;
+                margin: 0 auto;
+            }
+        }
+        .infoPratique{
+            width: 20%;
+            margin-right: $margin;
+            @include overflowY(scroll);
+            h3{
+                color: $beige;
+                text-transform: uppercase;
+            }
+            p{
+                color: grey;
+            }
+        }
+        .infoHoraire{
+            width: 15%;
+            margin-right: $margin;
+            @include overflowY(scroll);
+        }
+        .voirPlus{
+            display:none;
+        }
+        .infoDescription{
+            width: 40%;
+            margin-right: $margin;
+            @include overflowY(scroll);
+        }
+        .infoModif{
+            align-self: center;
+            .round{
+                border-radius : 50%;
+                background-color: $black;
+                color: $white;
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                font-size: $fontSize;
+                text-align: center;
+                margin: 10px 0;
+                &:hover { 
+                    background-color: $beige;
+                    transition: 0.2s;
+                }
+            }
+        }
+    }
+    
+}
+.btn-add {
+    .add{
+        position: fixed;
+        bottom: 60px;
+        right: 70px;
+        border-radius: 50%;
+        width: 56px;
+        height: 56px;
+        background-color: #d23f31;
+        box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+            color: $white;
+            line-height: 56px;
+            display: inline-block;
+        cursor: url(../../asset/img/icon/peace.png), auto;
+    }
+    .text-add {
+        display: none;
+        background-color: rgba($black, 0.3);
+        width: 100px;
+        height: 35px;
+        line-height: 35px;
+        border-radius: 3px;
+        position: fixed;
+        opacity: 0;
+        right: 140px;
+        transition: ease-out 0.2s;
+        bottom: 70px;
+        p { 
+            color: $white;
+            font-size: 14px;
+        }
+    }
+    &:hover {
+        .text-add { 
+            display: inline-block;
+            text-align: center;
+            opacity: 1;
+        }
+        i {
+            animation: rotate 0.7s ease-out;
+        }
+    }
+}
+
+.close{
+    color: $beige;
+    align-self: flex-end;
+    @include flex(row);
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    .fa-times{
+        margin-left: 10px;
+    }
+}
+
+.description{
+    width: 60px;
+}
+
+//----------------------------------Le Form READ + UPDATE
+.bloc_img{
+    @include flex(column);
+    justify-content: space-between;
+    .img_form{
+        width: 50%;
+        margin-top: 10px;
+        img{
+            width:30%;
+            height: 30%;
+        }
+    }
+}
+
+//----------------------------------Les Salons
+
+.salon{
+    width: 30%;
+    height: 300px;
+    margin: $margin 0;
+    background-color: aqua;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

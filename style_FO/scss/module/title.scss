@@ -1,0 +1,63 @@
+.title{
+    &.title-h1{
+        color: $white;
+        font-size: $fs-xl;
+        position: absolute;
+        top: 65%;
+        line-height: 90%;
+        opacity: 0.7;
+        padding: $p-s + 5px;
+        &.title-home { top: 60%; }
+        @media (max-width: $screen-md-max) {
+            top: 55%;
+        }
+        @media (max-width: $screen-sm-max){
+            font-size: 6rem;
+        }
+        @media (max-width: 465px){
+            top: 40%;
+        }
+    }
+    &.title-h2{
+        font-size: $fs-base;
+    }
+    &.title-h3{
+        color: $black;
+        text-transform: uppercase;
+        font-size: $fs-lg;
+    }
+    &.title-anim {
+        animation: anim 5.2s ease-in;
+        @media (max-width: $screen-sm-max){
+            top: 50%;
+        }
+    }
+    &.title-blocks {
+        @include margin($m-xl, top);
+        @include margin($m-m, bottom);
+        text-align: left;
+        color: $gray-light;
+        font-size: 2.3rem;
+//        h2::before,
+//        h2::after {
+//            content: "";
+//            @include border(2px solid $gray-light, bottom);
+////            @include margin($m-s, top);
+////            @include margin($m-s, bottom);
+//            display: block;
+//            width: 100%;
+//        }
+    }
+}
+
+    @keyframes anim{
+        0% {
+            opacity: 0;
+        }
+        95% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0.7;
+        }
+    }

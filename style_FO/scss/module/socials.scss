@@ -1,0 +1,47 @@
+.social {
+    width: 200px;
+
+    @include flex(row);
+    @include justify-content(space-between);
+    @include margin (auto, left);
+    @include margin (auto, right);
+}
+
+.circle{
+    background-color: transparent;
+    border: 2px solid $black;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    @include margin (auto, left);
+    @include margin (auto, right);
+    @include margin ($m-s, bottom);
+    position: relative;
+    transition: all .2s ease-in-out;
+    transform: rotate(0deg);
+    &:hover{
+        border-color: $primary;
+        transform: scale(1.2);
+        svg {
+            fill: $primary;
+            animation: rotating 0.6s linear infinite;
+        }
+        
+    }
+    img {
+        z-index: -2;
+        width: 60%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes rotating {
+    0% { transform: rotate(0deg);}
+    20% { transform: rotate(-30deg);}
+    55% { transform: rotate(0deg);}
+    75% { transform: rotate(30deg);}
+    100% { transform: rotate(0deg);}
+}

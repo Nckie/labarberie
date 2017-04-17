@@ -1,0 +1,95 @@
+footer{
+    @include margin ($m-m, top);
+    background-color: $gray-light;
+    h3 {
+        @include margin ($m-m, top);
+        @include margin ($m-m, bottom);
+    }
+    form{
+        margin-top: 0;
+        input{
+            @include border(0, '');
+            @include margin($m-s, bottom);
+            @include margin (0, top);
+            width: 100%;
+            padding: $p-s;
+            position: relative;
+        }
+        .submit {
+            position: absolute;
+            right: 15px;
+            background-color: $white;
+            height: 40px;
+            width: 10%;
+            font-size: 1.6rem;
+            &:hover {
+                color: $primary;
+            }
+            &.disabled {
+                i {
+                    opacity: 0.5;
+                }
+                &:hover {
+                    color: $gray-base;
+                    cursor: not-allowed;
+                }
+            }
+        }
+        @media (max-width: $screen-sm-max) { @include margin ($m-s, top); }
+        input[type="submit"]{
+        }
+    }
+    @media (max-width: $screen-sm-max) {
+        @include padding ($p-s, top);
+        section{
+            h3 {
+                text-align: left;
+                @include margin (0, top);
+                @include margin ($m-s, bottom);
+            }
+            +section{
+                h3{
+                    @include margin ($m-m, top);
+                    @include border (1px solid $white, top);
+                    @include padding ($p-m, top);
+                }
+            }
+            &:last-child{
+                display: none;
+            }
+        }
+        .social{ 
+            width: 100%;
+            @include justify-content(flex-start);
+            li{
+                @include margin ($m-s, right);
+            }
+        }
+    }
+    
+    
+    .footer-infos{
+        margin: $m-s 0;
+        font-size: $fs-base;
+        text-align: center;
+        a{
+            &:first-child { text-align: right; }
+            &:last-child { text-align: left; }
+            &:hover { color: $primary; }
+        }
+        &:before{
+            content: "";
+            border-top: 1px solid $white;
+            padding-top: $p-s;
+            width: 100%;
+        }
+    }
+    &.none { display: none; }
+}
+
+.copyright{
+    background-color: $black;
+    height: $m-m;
+    color: $white;
+    line-height: $m-m;
+}

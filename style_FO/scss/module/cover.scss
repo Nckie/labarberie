@@ -1,0 +1,41 @@
+.cover{
+    height: 600px;
+    overflow: hidden;
+    background-size: cover;
+//    background-position: 50% -300px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+//    background-position-y: 0;
+//    &.cover-about{
+//        background-position: 50% -300px;
+//    }
+    @media (max-width: $screen-md-max){
+        height: 500px !important;
+        background-position: center;
+        background-size: cover;
+        &.cover-about{ background-position: center; }
+    }
+    @media (max-width: $screen-sm-max){
+        background-position: center;
+        &.cover-about{ background-position: center; }
+    }
+}
+
+.bg-video {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 600px;
+    overflow: hidden;
+    .cover-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        min-width: 900px;
+
+    }
+}

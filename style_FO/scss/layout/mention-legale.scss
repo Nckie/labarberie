@@ -1,0 +1,46 @@
+.mentions, 
+.plan {
+    margin: 0 auto;
+    float: none;
+    min-height: 550px;
+    @media (max-width: $screen-md-max){
+        min-height: 800px;
+    }    
+    @media (max-width: $screen-sm-max){
+        min-height: 900px;
+    }
+    h1 {
+        color: $primary;
+        @include padding($m-xl*1.3, 'top');
+        @include padding($m-m, 'bottom');
+        @media (max-width: $screen-sm-max){
+            font-size: 6rem;
+        }
+    }
+}
+
+.plan {
+    h2, i {
+        display: inline-block;
+    }
+    i {
+        @include padding($p-s, 'right');
+        font-size: $fs-lg;
+    }
+    hr { 
+        margin: $m-m 0;
+        border-color: $gray-base;
+    }
+    ul {
+        @include padding($p-m, 'left');
+        li {
+            list-style-type: disc;
+            transition: 3s;
+            a {
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }   
+    }
+}

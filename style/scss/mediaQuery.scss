@@ -1,0 +1,52 @@
+@media (max-width : 959px){
+    #tabRead{
+        .blockInfo{
+            .infoHoraire, .infoDescription{
+                width: 8%;
+                align-self: center;
+            }
+            .voirPlus{
+                @include flex(row);
+                cursor: pointer;
+                justify-content: center;
+                .plus{
+                    font-size: 30px;;
+                    color: $beige;
+                }
+            }
+            .infoImg{
+                margin-right: 10px;
+            }
+            .infoPratique{
+                width: 40%;
+                margin-right: 10px;
+            }
+            .hiddenTextHor, .hiddenTextDes{
+                display: none;
+                &.is-active{
+                    display: block;
+                    position: absolute;
+                    background-color: $white;
+                    padding: $margin20;
+                    width: 200px;
+                    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+                }
+            }
+            .hiddenTextDes { 
+                @media (min-width: 561px){
+                    right: 50px;
+                }
+                @media (min-width: 490px){
+                    right: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width : 479px){
+    .wrapper{
+        max-width: $widthCnx;
+        margin: auto;
+    }
+}

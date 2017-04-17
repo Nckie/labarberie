@@ -1,0 +1,24 @@
+.text{
+    &.text-center {text-align: center;}
+    &.text-left {text-align: left;}
+    &.text-right {text-align: right;}
+    &.text-mt {@include margin ($m-m, top);}
+    &.text-upp { text-transform: uppercase; }
+    &.text-gray-base { color: $gray-base; }
+    &.text-line-height { line-height: $m-m; }
+    &.fw-700 { font-weight: 700; }
+    &.fw-400 { font-weight: $fw-m;}
+    &.fw-200 {
+        font-weight: $fw-xs;
+//        font-size: $fs-s;
+    }
+    &.text-align-icon {
+        @include flex(row);
+        @include align-items(center);
+        a, p { @include padding($p-s, left); }
+        +.text-align-icon {
+            @include margin($m-s, top);
+        }
+    }
+    &.text-left { text-align: left; }
+}

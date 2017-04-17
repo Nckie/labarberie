@@ -1,0 +1,56 @@
+.burger{
+    display: none;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    &:hover{
+        span{
+            transition: background-color ease-out 0.4s;
+            background-color: $primary;
+        }
+    }
+    span{
+        position: absolute;
+        background-color: $black;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        &.top{
+            top: 0;
+            transition: transform 0.2s ease-out;
+        }
+        &.middle{
+            top: 50%;
+            transform: translateY(-50%);
+            transition: opacity 1s ease-out;
+            opacity: 1;
+        }
+        &.bottom{
+            bottom: 0;
+            transition: transform 0.2s ease-out;
+        }
+    }
+
+    @media (max-width: $screen-sm-max){
+        display: block;
+        &.is-active{
+            span{
+                &.top{
+                    top: 50%;
+                    transform: translateY(-50%) rotate(45deg);
+                    transition: transform 0.2s ease-out;
+                }
+                &.middle{
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: opacity 0.6s ease-out;
+                }
+                &.bottom{
+                    top: 50%;
+                    transform: translateY(-50%) rotate(-45deg);
+                    transition: transform 0.2s ease-out;
+                }
+            }
+        }
+    }
+}

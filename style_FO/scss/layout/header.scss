@@ -1,0 +1,70 @@
+header{
+    @include flex(row);
+    @include justify-content(space-between);
+    @include padding($p-x, top);
+    @include padding($p-base, right);
+    @include padding($p-base, left);
+//    @include padding($p-x, bottom);
+    @include align-items(flex-end);
+    height: 50px;
+    width: 100%;
+    background-color: rgba($white, 0.95);
+    z-index: 999;
+    position: fixed;
+    box-shadow: 0px 7px 30px -12px rgba($gray-base,0.69);
+    a { height: 100%; }
+    nav{
+        @media (min-width: $screen-md){
+            width: 25%;
+            ul{
+                list-style: none;
+                @include flex(row);
+                @include justify-content(space-between);
+            }
+        }
+
+        @media (max-width: $screen-sm-max) { 
+            display: none;
+            &.is-active{
+                display: block;
+                ul{
+                    animation: nav .1s linear;
+                    @include flex(column);
+                    position: absolute;
+                    top: 50px;
+                    width: 100%;
+                    right: 0;
+                    background-color: rgba($white, 0.5);
+                    text-align: left;
+                    li{
+                        @include padding ($p-s, top);
+                        @include padding ($p-s, bottom);
+                        font-size: $fs-lg;
+                        +li{
+                            @include border(1px solid rgba($white, 0.7), top);
+                        }
+                        &:hover{
+                            background-color: rgba($white, 0.7);
+                            a { color: $primary; }
+                        }
+                        a{
+                            @include padding ($p-m, left);
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: $screen-sm-max) { align-items: center; }
+}
+
+@keyframes nav{
+    from { top: -50px; }
+    to { top: 50px; }
+}
+@keyframes nav-bye-bye{
+    from { top: 50px; }
+    to { top: -50px; }
+}

@@ -1,0 +1,34 @@
+//VARIABLES
+@import "../scss/variable";
+
+//MIXINS
+@import "../scss/mixins/mxn_flex";
+@import "../scss/mixins/mxn_padding";
+@import "../scss/mixins/mxn_border";
+@import "../scss/mixins/mxn_margin";
+
+//LAYOUT
+@import "../scss/layout/global";
+@import "../scss/layout/header";
+@import "../scss/layout/footer";
+@import "../scss/layout/mention-legale";
+
+//BASE
+@import "../scss/base.scss";
+
+//MODULES
+@import "../scss/module/title";
+@import "../scss/module/cover";
+@import "../scss/module/form";
+@import "../scss/module/map";
+@import "../scss/module/text";
+@import "../scss/module/position";
+@import "../scss/module/utils";
+@import "../scss/module/grid";
+@import "../scss/module/modal";
+@import "../scss/module/bg";
+@import "../scss/module/filter";
+@import "../scss/module/burger";
+@import "../scss/module/slider";
+@import "../scss/module/socials";
+@import "../scss/module/test-anim";

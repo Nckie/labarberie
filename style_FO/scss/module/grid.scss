@@ -1,0 +1,55 @@
+.grid-thumbnail {
+    padding-top: $p-x + $p-s;
+    margin: $m-s 0;
+    cursor: pointer;
+    .caption {
+        height: 100px;
+        @include flex(column);
+        @include justify-content(space-between);
+        padding: 15px 0;
+    }
+    @media (min-width: $screen-md) {
+        &:hover{
+            box-shadow: 6px 5px 47px -19px rgba($gray-base,1);
+            .thumbnail-img{
+                transition: all .2s ease-in-out;
+                opacity: 0.85;
+                transform: scale(1.01);
+            }
+        }
+    }
+    .img {
+        overflow: hidden;
+
+        @media (max-width: $screen-md) {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .thumbnail-img {
+            @media (max-width: $screen-sm-max) {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    
+    &.none{
+        display: none;
+    }
+}
+
+.btn-top {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba($primary, 1);
+    color: $white !important;
+    margin: auto;
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.10);
+}

@@ -1,0 +1,4 @@
+.wrapper{
+    max-width: $max-width;
+    @include margin(auto, '');
+}

@@ -1,0 +1,16 @@
+@mixin flex($direction){
+    display: flex;
+    flex-direction: $direction;
+}
+@mixin border($type){
+    border: $type;
+}
+@mixin borderRadius($px){
+    border-radius: $px;
+}
+@mixin overflowY($px){
+    overflow-y: $px;
+}
+@mixin overflow($px){
+    overflow: $px;
+}

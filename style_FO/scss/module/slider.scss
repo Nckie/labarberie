@@ -1,0 +1,225 @@
+.about-section {
+    .btn-joke {
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .joke {
+        display: none;
+        position: absolute;
+        right: 0;
+        margin-right: 42px;
+        background-color: $primary;
+        width: 100;
+        color: white;
+        text-transform: uppercase;
+        padding: 10px;
+        border-radius: 30px;
+        .triangle {
+            width: 11px;
+            height: 11px;
+            position: absolute;
+            left: 0;
+            top: 48%;
+            background-color: $primary;
+            transform: rotate(45deg) translate(-50%);
+            @media (min-width: 991px){
+                width: 11px;
+                height: 11px;
+                position: absolute;
+                left: 50%;
+                top: 95%;
+                background-color: #1E00F7;
+                transform: rotate(45deg) translateX(-50%);
+            }
+        }
+        &.active {
+            display: block;
+        }
+        @media (min-width: 991px){
+            margin-bottom: $p-m !important;
+            margin-right: 0;
+            position: relative;
+            text-align: center;
+        }
+        @media (max-width: $screen-md-max) {
+            right: 10px;
+            margin: 0;
+        }
+        @media (max-width: $screen-sm-max) {
+            margin-right: $m-s;
+        }
+    }
+    @include margin($m-l, top);
+    .reassurance {
+        @media (max-width: $screen-sm-max) {
+            +.reassurance { @include margin($m-m, top); }
+        }
+    }
+}
+.slider {
+    margin-top: $m-l;
+    @include margin ($m-l, top);
+    @include margin ($m-l, bottom);
+    .btns {
+        position: absolute;
+        margin: auto;
+        width: 100%;
+        height: 90%;
+        z-index: 2;
+        @media (max-width: $screen-sm-max) {
+            height: 60%;
+        }
+        .btn-prev, .btn-next { 
+            padding: 0;
+            font-size: $fs-lg;
+            height: 100%;
+            @media (max-width: $screen-sm-max) { 
+                font-size: $fs-lg*1.7;
+            }
+            i { height: 100%; }
+        }
+        .btn-prev {
+            &:hover { 
+                color: $primary;
+                cursor: w-resize; 
+            }
+        }
+        .btn-next {
+            &:hover { 
+                color: $primary;
+                cursor: e-resize; 
+            }
+        }
+    }
+
+    .team { 
+        @include padding($p-l, top);
+        #name {
+            @media (max-width: $screen-md-max) {
+                @include margin ($m-m, top);
+            }
+        }
+        #fonction {
+            @include margin($m-s, bottom);
+            font-weight: $fw-l;
+        }
+        hr{
+            margin: $m-s 0;
+        }
+        .des { padding-bottom: $p-s  * 1.3; }
+        #email {
+            color: $primary;
+            font-weight: $fw-l;
+            position: absolute;
+            z-index: 2;
+        }
+        .block-socials {
+            position: absolute;
+//            bottom: 0;
+            margin-bottom: $p-m;
+            z-index: 5;
+        }
+        .social { 
+            @include margin($m-m, top);
+            z-index: 3;
+            @media (min-width: $screen-md) { width: 100px;}
+            @media (max-width: $screen-sm-max) {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                li {
+                    +li { @include margin($m-s, left); }
+                }
+            }
+            .circle {
+                width: 40px;
+                height: 40px;
+                margin-right: $m-s;
+                @media (max-width: $screen-sm-max) {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+        .img { 
+            overflow: hidden;
+            @media (max-width: $screen-sm-max) {
+                height: 350px;
+                margin: 0 ($m-s + $m-xs);
+                position: relative;
+            }
+            img {
+                @media (max-width: $screen-sm-max) {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+}
+
+.button--moema {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: $white;
+    //	color: $black;
+    border: 2px solid $black;
+    transition: background-color 0.3s, color 0.3s;
+    svg { fill: $black; }
+}
+.button--moema::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    bottom: -15px;
+    right: -15px;
+    background: inherit;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.4;
+    transform: scale3d(0.8, 0.5, 1);
+    svg { fill: $primary; }
+}
+.button--moema:hover {
+    transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+    color: $white;
+    border-color: $primary;
+    background-color: $primary;
+    animation: anim-moema-1 0.3s forwards;
+    svg { fill: $white; }
+}
+
+.button--moema:hover::before {
+    animation: anim-moema-2 0.3s 0.3s forwards;
+}
+
+@keyframes anim-moema-1 {
+    60% {
+        transform: scale3d(0.8, 0.8, 1);
+        opacity: 0;
+    }
+    85% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes anim-moema-2 {
+    to {
+        opacity: 0;
+        transform: scale3d(1, 1, 1);
+    }
+}

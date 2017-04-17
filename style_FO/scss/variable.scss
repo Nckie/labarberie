@@ -1,0 +1,60 @@
+//COULEUR
+$white: #FFF;
+$black: #000;
+$primary: #1E00F7;
+$secondary: #f8bcbc;
+$tertiary: #bcf8c5;
+
+//GRAYSCALE
+$gray-base: #c7c7c7;
+$gray-light: #f0f0f0;
+
+//FONT FAMILY
+$font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+
+//FONT WEIGHT
+$fw-xs: 200;
+$fw-s: 300;
+$fw-m: 400;
+$fw-l: 700;
+
+//FONT_SIZE
+$fs-s:     0.9rem;
+$fs-base:  1rem;
+$fs-m:     1.25rem;
+$fs-lg:    2rem;
+$fs-xl:    7rem;
+
+//MARGIN
+$m-xs: 5px;
+$m-s: 10px;
+$m-base: 20px;
+$m-m: 30px;
+$m-l: 50px;
+$m-xl: 70px;
+$m-xxl: 100px;
+
+//PADDING
+$p-x: 5px;
+$p-s: 10px;
+$p-base: 20px;
+$p-m: 30px;
+$p-l: 70px;
+
+//MAX WIDTH
+$max-width: 1200px;
+$max-width-form: 1024px;
+
+//INPUT
+$height-desktop: 40px;
+$height: 52px;
+
+//MEDIA QUERIES
+$screen-xl: 1281px;
+$screen-lg: 992px;
+$screen-md: 768px;
+$screen-sm: 480px;
+
+$screen-sm-max: $screen-md - 1;
+$screen-md-max: $screen-lg - 1;
+//$screen-lg-max: $screen-xl - 1;

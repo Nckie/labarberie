@@ -1,0 +1,41 @@
+.contact-map{
+    margin: 0 0 $m-l 0;
+    @include padding ($m-m, top);
+    .map{
+        padding: 0;
+    }
+    #map{
+        height: 400px;
+        //        z-index: 2;
+    }
+    aside{
+        height: 100%;
+        background-color: $black;
+        color: $white;
+        @include padding($p-base, "");
+        @media (max-width: $screen-sm-max) {
+            p:nth-child(1):after, 
+            p:nth-child(2):after {
+                content: "";
+                @include border(1px solid $white, bottom);
+                @include margin($m-m, top);
+                @include margin($m-m, bottom);
+                display: block;
+                width: 15px;
+            }
+        }
+        @media (min-width: $screen-lg) {
+            height: 400Px;
+            p:nth-child(1):after, 
+            p:nth-child(2):after {
+                content: "";
+                @include border(1px solid $white, bottom);
+                @include margin($m-m, top);
+                @include margin($m-m, bottom);
+                display: block;
+                width: 15px;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,81 @@
+form{
+    max-width: $max-width-form;
+    margin: $m-l auto 0 auto;
+    @include padding ($m-m, bottom);
+    .row{ margin: 0; }
+    input{
+        margin-bottom: $m-m;
+        height: $height-desktop;
+        @include border(none, "");
+        @include border(1px solid $black, bottom);
+        background-color: $white;
+        &:focus{
+            outline: none;
+        }
+    }
+    textarea{
+        margin: $m-m 0;
+        resize: none;
+        color: $black;
+        padding-top: $p-s;
+        border: 1px solid $black;
+        &:focus{
+            outline: none;
+        }
+    }
+    input[type ="submit"]{
+        float: none;
+        margin: 0 auto;
+        background-color: $black;
+        height: $height-desktop;
+        color: $white;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in;
+        &:hover{
+            transition: background-color 0.2s ease-in;
+            background-color: $primary;
+        }
+    }
+}
+
+.select{
+    margin: $m-m 0;
+    height: $height-desktop;
+    width: 100%;
+    @include border(1px solid $black, "");
+    background-color: $white;
+    @include padding (3px, "");
+    outline: none;
+    &.select-no-border{ border: none; }
+}
+.select-contact{ 
+    padding: 0;
+    .select{
+        margin-bottom: 0;
+    }
+    hr{ margin: 0 0 $m-l 0; }
+}
+.err{
+    width: 30%;
+    height: 100%;
+    padding: 10px;
+    background-color: $secondary;
+    margin: $m-s auto;
+    text-align: center;
+    color: $white;
+    line-height: 2;
+    @media (max-width: $screen-sm-max){
+        width: 100%;
+    }
+}
+
+.valid{
+    padding: $p-s;
+    height: 100%;
+    background-color: $primary;
+    margin: $m-s auto;
+    text-align: center;
+    color: $white;
+    line-height: 2;
+    cursor: pointer;
+}

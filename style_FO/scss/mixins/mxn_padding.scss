@@ -1,0 +1,16 @@
+@mixin padding ($style, $sides){
+    @if ($style != "") {
+        @if ($sides == "") {
+            padding: $style;
+        } @else {
+            @each $side in $sides {
+               @if ($side == 'top' or
+                    $side == 'right' or
+                    $side == 'bottom' or
+                    $side == 'left') {
+                    padding-#{$side}: $style;
+                }
+            }
+        }
+    }
+}

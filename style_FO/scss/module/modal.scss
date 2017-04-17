@@ -1,0 +1,136 @@
+body.no-scroll{
+    overflow: hidden;
+    max-height: 100vh;
+}
+
+.modal-bg{
+    background-color: black;
+    top: 0;
+    left: 0;
+    opacity: .70;
+    display: none;
+    height: 100%;
+    width: 100%;
+    cursor: crosshair;
+    &.is-active{
+        display: block;
+        z-index: 5;
+    }
+}
+.modal-content{
+    overflow: scroll;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background-color: white;
+    a:hover{ 
+        transition: color .3s ease-in;
+        color: $primary;
+    }
+    p{
+        font-size: $fs-m;
+    }
+    &.is-active{
+        @include flex(row);
+        z-index: 6;
+    }
+    @media (min-width: $screen-lg){
+        height: 500px;
+    }
+    @media (max-width: $screen-md-max){
+        height: 800px;
+        position: fixed;
+        top: 55%;
+//            top: 50%;
+//    position: absolute;
+//    overflow-Y: scroll;
+//    transform: translateY(-50%);
+//        left: 50%;
+//        transform: translate(-50%,-50%);
+    }
+    @media (max-width: $screen-sm-max){
+    }
+    .fa-times{
+        position: absolute;
+        cursor: pointer;
+        z-index: 1;
+        transition: color .3s ease-in;
+        &:hover{
+            color: $primary;
+            
+        }
+        @media (min-width: $screen-md){
+            top: 0;
+            right: 0;
+            @include padding ($p-base, top);
+            @include padding ($p-base, right);
+        }
+        @media (max-width: $screen-sm-max){
+            top: 65px;
+            left: 50%;
+            font-size: $fs-lg*1.4;
+        }
+    }
+    .left-side{
+        @media (min-width: $screen-lg){
+            height: 100%;
+        }
+        padding: ($p-base*2);
+        .icons-block{
+            @include flex(row);
+            @include margin($m-m, top);
+            +.icons-block{
+                @include margin($m-s, top);
+            }
+            .icon{
+                @include border (1px solid $black, "");
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+                border-radius:50%;
+                background-color: $black;
+                color: $white;
+            }
+            p, a{
+                max-width: 80%;
+                @include margin($m-s, left);
+            }
+            &:first-child {
+                max-height: 35px;
+                overflow-y: scroll;
+                overflow-x: hidden;
+            }
+        }
+    }
+    .right-side{
+        @media (min-width: $screen-lg){
+            height: 100%;
+        }
+        padding: ($p-base*2);
+        article{
+            height: 100%;
+            @include flex(column);
+            @include justify-content(space-between);
+            @media (max-width: $screen-md-max) {
+                .description {
+                    margin-bottom: $m-m;
+                }
+                .horaire {
+                    margin-bottom: $m-m;
+                }
+            }
+        }
+        #map{
+            background-color: yellow;
+            height: 200px;
+        }
+    }
+    @media (max-width: $screen-sm-max) {
+        width: 100%;
+        height: 100%;
+        padding-top: 80px;
+    }
+
+}
