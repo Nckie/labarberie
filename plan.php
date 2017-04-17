@@ -4,7 +4,6 @@
    <div class="container">
         <div class="row">
             <div class="col-md-9 mentions js-mentions">
-<!--            Bonjour-->
                 <h1>Plan du site</h1>
                 <i class="fa fa-sticky-note-o" aria-hidden="true"></i>
                 <h2>Pages</h2>
