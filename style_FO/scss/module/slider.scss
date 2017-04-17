@@ -15,44 +15,32 @@
         right: 0;
         margin-right: 42px;
         background-color: $primary;
-        width: 100;
+        width: 100%;
         color: white;
         text-transform: uppercase;
         padding: 10px;
         border-radius: 30px;
+        @media (max-width: $screen-md-max) and (min-width: $screen-md){
+            width: 50% !important;
+        }
         .triangle {
             width: 11px;
             height: 11px;
             position: absolute;
-            left: 0;
-            top: 48%;
-            background-color: $primary;
-            transform: rotate(45deg) translate(-50%);
-            @media (min-width: 991px){
-                width: 11px;
-                height: 11px;
-                position: absolute;
-                left: 50%;
-                top: 95%;
-                background-color: #1E00F7;
-                transform: rotate(45deg) translateX(-50%);
-            }
+            left: 50%;
+            top: 95%;
+            background-color: #1E00F7;
+            transform: rotate(45deg) translateX(-50%);
         }
         &.active {
             display: block;
-        }
-        @media (min-width: 991px){
             margin-bottom: $p-m !important;
             margin-right: 0;
             position: relative;
             text-align: center;
-        }
-        @media (max-width: $screen-md-max) {
-            right: 10px;
-            margin: 0;
-        }
-        @media (max-width: $screen-sm-max) {
-            margin-right: $m-s;
+            @media (max-width: $screen-md-max) and (min-width: $screen-md){
+                margin: 0 auto;
+            }
         }
     }
     @include margin($m-l, top);

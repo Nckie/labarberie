@@ -35,6 +35,26 @@ input[type ="submit"], .add{
         background-color: $beige;
     }
 }
+
+textarea{
+    resize: none;
+    color: $black;
+    border: 1px solid $black;
+    padding: 10px;
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus
+    &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px #FFFFFF inset;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+    box-shadow: none;
+    &:focus{
+        outline: none;
+    }
+}
+
+
 .selectSide{
     @include flex(row);
     width: 100%;

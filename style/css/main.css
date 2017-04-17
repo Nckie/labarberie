@@ -320,6 +320,23 @@ input[type="submit"]:hover, .add:hover {
   background-color: #1E00F7;
 }
 
+textarea {
+  resize: none;
+  color: black;
+  border: 1px solid black;
+  padding: 10px;
+  box-shadow: none;
+}
+textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #FFFFFF inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+          transition: background-color 5000s ease-in-out 0s;
+}
+textarea:focus {
+  outline: none;
+}
+
 .selectSide {
   display: -webkit-box;
   display: -webkit-flex;

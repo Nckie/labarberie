@@ -80,7 +80,7 @@ body.no-scroll{
         padding: ($p-base*2);
         .icons-block{
             @include flex(row);
-            @include margin($m-m, top);
+            @include margin(15px, top);
             +.icons-block{
                 @include margin($m-s, top);
             }

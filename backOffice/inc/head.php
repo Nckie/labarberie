@@ -6,6 +6,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
         <script src="https://use.fontawesome.com/da21326989.js"></script>
         <link rel="stylesheet" href="../style/css/main.css">
+        <link rel="icon" href="asset/img/logo/favicon.ico" />
         <script src="../js/utility.js"></script>
         <script src="../js/app.js"></script>
         <script src="../js/hidenText.js"></script>
